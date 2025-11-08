@@ -142,6 +142,7 @@ RUN mkdir -p /opt/steam/hlds/cstrike/addons/revoice && \
     echo 'linux addons/revoice/revoice_mm_i386.so' >> /opt/steam/hlds/cstrike/addons/metamod/plugins.ini && \
     rm -rf /tmp/revoice /tmp/revoice.zip
 
+COPY configs/server.cfg /opt/steam/hlds/cstrike/server.cfg
 
 WORKDIR /opt/steam/hlds
 ENTRYPOINT service nginx start; ./hlds_run -console -game cstrike -strictportbind -ip 0.0.0.0 -port $PORT +sv_lan $SV_LAN +map $MAP -maxplayers $MAXPLAYERS
