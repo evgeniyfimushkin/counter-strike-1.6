@@ -145,9 +145,12 @@ RUN mkdir -p /opt/steam/hlds/cstrike/addons/revoice && \
 COPY configs/server.cfg /opt/steam/hlds/cstrike/server.cfg
 COPY configs/mapcycle.txt /opt/steam/hlds/cstrike/mapcycle.txt
 COPY configs/motd.txt /opt/steam/hlds/cstrike/motd.txt
-COPY configs/steamcomm.lst /opt/steam/hlds/cstrike/cstrike/steamcomm.lst
+COPY configs/steamcomm.lst /opt/steam/hlds/valve/steamcomm.lst
 COPY configs/maps.ini /opt/steam/hlds/cstrike/addons/amxmodx/configs/maps.ini
-COPY lib/amx_parachute/cstrike /opt/steam/hlds/cstrike
+COPY lib/reapi_parachute_mute/cstrike /opt/steam/hlds/cstrike
+COPY configs/plugins.ini /opt/steam/hlds/cstrike/addons/amxmodx/configs/plugins.ini
+COPY configs/users.ini /opt/steam/hlds/cstrike/addons/amxmodx/configs/users.ini
+RUN echo "amx_parachute.amxx" >> /opt/steam/hlds/cstrike/addons/amxmodx/configs/plugins.ini
 
 WORKDIR /opt/steam/hlds
 ENTRYPOINT service nginx start; ./hlds_run -console -game cstrike -strictportbind -ip 0.0.0.0 -port $PORT +sv_lan $SV_LAN +map $MAP -maxplayers $MAXPLAYERS
