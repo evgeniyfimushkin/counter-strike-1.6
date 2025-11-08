@@ -152,5 +152,9 @@ COPY configs/plugins.ini /opt/steam/hlds/cstrike/addons/amxmodx/configs/plugins.
 COPY configs/users.ini /opt/steam/hlds/cstrike/addons/amxmodx/configs/users.ini
 RUN echo "amx_parachute.amxx" >> /opt/steam/hlds/cstrike/addons/amxmodx/configs/plugins.ini
 
+RUN sed -i "s/TIMEOUT=10/TIMEOUT=1/" /opt/steam/hlds/hlds_run
+
+COPY kickstart.sh /kickstart.sh
+
 WORKDIR /opt/steam/hlds
-ENTRYPOINT service nginx start; ./hlds_run -console -game cstrike -strictportbind -ip 0.0.0.0 -port $PORT +sv_lan $SV_LAN +map $MAP -maxplayers $MAXPLAYERS
+ENTRYPOINT /kickstart.sh
