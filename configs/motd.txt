@@ -1,31 +1,44 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Cstrike MOTD</title>
+<title>Барнаульский кайфарик</title>
 <style type="text/css">
-       body {
-            background: #000;
-            margin: 8px;
-            color: #FFB000;
-            font: normal 16px/20px Verdana, Tahoma, sans-serif;
-        }
+    body {
+        background-color: #e2dfd7; /* мягкий приятный фон */
+        color: #2f2f2f;
+        font-family: Verdana, Tahoma, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding-top: 10px; /* минимальный отступ сверху */
+    }
 
-        a {
-            color: #FFF;
-            text-decoration: underline;
-        }
+    h1 {
+        font-size: 2em; /* адаптивный размер */
+        margin: 0.5em 0;
+        color: #444;
+    }
 
-        a:hover {
-            color: #EEE;
-            text-decoration: none;
-        }
+    img {
+        max-width: 90%;  /* чтобы подстраивалось под экран */
+        height: auto;    /* сохраняем пропорции */
+        border: 0.15em solid #999;
+        border-radius: 0.5em;
+    }
+
+    a {
+        text-decoration: underline;
+        color: #2760ad;
+    }
+
+    a:hover {
+        color: #1b4a8d;
+    }
 </style>
 </head>
 <body>
-You are playing Counter-Strike v1.6<br>
-Visit the official CS web site @<br>
-www.counter-strike.net<br>
-<a href="http://www.counter-strike.net">Visit Counter-Strike.net</a>
+    <h1>Барнаульский кайфарик</h1>
+    <img src="https://www.amic.ru/images/news/news/419206_size2.jpg" alt="Барнаульский кайфарик">
 </body>
 </html>
+

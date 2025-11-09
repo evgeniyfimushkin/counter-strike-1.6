@@ -145,6 +145,7 @@ RUN mkdir -p /opt/steam/hlds/cstrike/addons/revoice && \
 COPY configs/server.cfg /opt/steam/hlds/cstrike/server.cfg
 COPY configs/mapcycle.txt /opt/steam/hlds/cstrike/mapcycle.txt
 COPY configs/motd.txt /opt/steam/hlds/cstrike/motd.txt
+COPY configs/motd.jpg /opt/steam/hlds/cstrike/motd.jpg
 COPY configs/steamcomm.lst /opt/steam/hlds/valve/steamcomm.lst
 COPY configs/maps.ini /opt/steam/hlds/cstrike/addons/amxmodx/configs/maps.ini
 COPY lib/reapi_parachute_mute/cstrike /opt/steam/hlds/cstrike
