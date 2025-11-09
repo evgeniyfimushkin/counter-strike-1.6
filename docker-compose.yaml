@@ -10,6 +10,4 @@ services:
       PORT: 27015
       HTTP_PORT: 8088
       MAP: "de_train"
-      SERVER_NAME: "Blatnoy server"
-      MAXPLAYERS: 32
     restart: always
