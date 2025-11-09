@@ -166,5 +166,8 @@ COPY kickstart.sh /kickstart.sh
 RUN mkdir -p /root/.steam/sdk32/ && \
     cp /opt/steam/hlds/steamclient.so /root/.steam/sdk32/steamclient.so
 
+RUN sed -i "s/imessage.amxx/;imessage.amxx/g" /opt/steam/hlds/cstrike/addons/amxmodx/configs/plugins.ini
+RUN sed -i "s/scrollmsg.amxx/;scrollmsg.amxx/g" /opt/steam/hlds/cstrike/addons/amxmodx/configs/plugins.ini
+
 WORKDIR /opt/steam/hlds
 ENTRYPOINT /kickstart.sh
