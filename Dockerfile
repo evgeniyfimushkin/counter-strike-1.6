@@ -16,7 +16,7 @@ ARG rehlds_url="https://github.com/dreamstalker/rehlds/releases/download/$rehlds
 ARG metamod_url="https://github.com/rehlds/metamod-r/releases/download/$metamod_version/metamod-bin-$metamod_version.zip"
 ARG amxmod_url="https://www.amxmodx.org/amxxdrop/1.9/amxmodx-1.9.0-git5263-base-linux.tar.gz"
 ARG revoice_url="https://teamcity.rehlds.org/guestAuth/downloadArtifacts.html?buildTypeId=Revoice_Publish&buildId=lastSuccessful"
-ARG jk_botti_url="http://koti.kapsi.fi/jukivili/web/jk_botti/jk_botti-$jk_botti_version-release.tar.xz"
+ARG jk_botti_url="https://jukivili.kapsi.fi/web/jk_botti/jk_botti-1.43-release.tar.xz"
 ARG rehlds_url=https://github.com/dreamstalker/rehlds/releases/download/3.14.0.857/rehlds-dist-3.14.0.857-dev.zip
 ARG regamedll_version=5.26.0.668
 ARG reapi_version=5.24.0.300
@@ -141,6 +141,10 @@ RUN mkdir -p /opt/steam/hlds/cstrike/addons/revoice && \
     find /tmp/revoice -name "revoice.cfg" -exec cp {} /opt/steam/hlds/cstrike/addons/revoice/revoice.cfg \; && \
     echo 'linux addons/revoice/revoice_mm_i386.so' >> /opt/steam/hlds/cstrike/addons/metamod/plugins.ini && \
     rm -rf /tmp/revoice /tmp/revoice.zip
+
+RUN curl -sLO https://jukivili.kapsi.fi/web/jk_botti/jk_botti-1.43-release.tar.xz \
+    && tar -xf jk_botti-1.43-release.tar.xz -C /opt/steam/hlds \
+    && echo 'linux addons/jk_botti/dlls/jk_botti_mm_i386.so' >> /opt/steam/hlds/cstrike/addons/metamod/plugins.ini
 
 COPY maps /opt/steam/hlds/cstrike
 COPY configs/server.cfg /opt/steam/hlds/cstrike/server.cfg
