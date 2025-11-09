@@ -18,6 +18,12 @@ ARG amxmod_url="https://www.amxmodx.org/amxxdrop/1.9/amxmodx-1.9.0-git5263-base-
 ARG revoice_url="https://teamcity.rehlds.org/guestAuth/downloadArtifacts.html?buildTypeId=Revoice_Publish&buildId=lastSuccessful"
 ARG jk_botti_url="http://koti.kapsi.fi/jukivili/web/jk_botti/jk_botti-$jk_botti_version-release.tar.xz"
 ARG rehlds_url=https://github.com/dreamstalker/rehlds/releases/download/3.14.0.857/rehlds-dist-3.14.0.857-dev.zip
+ARG regamedll_version=5.26.0.668
+ARG reapi_version=5.24.0.300
+ARG regamedll_url="https://github.com/s1lentq/ReGameDLL_CS/releases/download/$regamedll_version/regamedll-bin-$regamedll_version.zip"
+ARG reapi_url="https://github.com/s1lentq/reapi/releases/download/$reapi_version/reapi-bin-$reapi_version.zip"
+ARG revoice_url="https://github.com/rehlds/ReVoice/releases/download/0.1.0.34/revoice_0.1.0.34.zip"
+
 
 
 # define default env variables
@@ -103,11 +109,6 @@ RUN curl -sqL "$amxmod_url" | tar -C /opt/steam/hlds/cstrike/ -zxvf - \
     && echo 'linux addons/amxmodx/dlls/amxmodx_mm_i386.so' >> /opt/steam/hlds/cstrike/addons/metamod/plugins.ini
 RUN cat /opt/steam/hlds/cstrike/mapcycle.txt >> /opt/steam/hlds/cstrike/addons/amxmodx/configs/maps.ini
 
-ARG regamedll_version=5.26.0.668
-ARG reapi_version=5.24.0.300
-ARG regamedll_url="https://github.com/s1lentq/ReGameDLL_CS/releases/download/$regamedll_version/regamedll-bin-$regamedll_version.zip"
-ARG reapi_url="https://github.com/s1lentq/reapi/releases/download/$reapi_version/reapi-bin-$reapi_version.zip"
-
 # Install ReGameDLL_CS
 RUN curl -sLJO "$regamedll_url" \
  && unzip -o -j regamedll-bin-$regamedll_version.zip "bin/linux32/cstrike/*" -d "/opt/steam/hlds/cstrike" \
@@ -132,7 +133,6 @@ RUN mkdir -p /opt/steam/hlds/cstrike/addons/metamod \
 COPY lib/bind_key/amxx/bind_key.amxx /opt/steam/hlds/cstrike/addons/amxmodx/plugins/bind_key.amxx
 RUN echo 'bind_key.amxx            ; binds keys for voting' >> /opt/steam/hlds/cstrike/addons/amxmodx/configs/plugins.ini
 
-ARG revoice_url="https://github.com/rehlds/ReVoice/releases/download/0.1.0.34/revoice_0.1.0.34.zip"
 # Install ReVoice
 RUN mkdir -p /opt/steam/hlds/cstrike/addons/revoice && \
     curl -sL "$revoice_url" -o /tmp/revoice.zip && \
@@ -142,20 +142,25 @@ RUN mkdir -p /opt/steam/hlds/cstrike/addons/revoice && \
     echo 'linux addons/revoice/revoice_mm_i386.so' >> /opt/steam/hlds/cstrike/addons/metamod/plugins.ini && \
     rm -rf /tmp/revoice /tmp/revoice.zip
 
+COPY maps /opt/steam/hlds/cstrike
 COPY configs/server.cfg /opt/steam/hlds/cstrike/server.cfg
-COPY configs/mapcycle.txt /opt/steam/hlds/cstrike/mapcycle.txt
 COPY configs/motd.txt /opt/steam/hlds/cstrike/motd.txt
 COPY configs/motd.jpg /opt/steam/hlds/cstrike/motd.jpg
 COPY configs/steamcomm.lst /opt/steam/hlds/valve/steamcomm.lst
 COPY configs/maps.ini /opt/steam/hlds/cstrike/addons/amxmodx/configs/maps.ini
+COPY configs/maps.ini /opt/steam/hlds/cstrike/mapcycle.txt
 COPY lib/reapi_parachute_mute/cstrike /opt/steam/hlds/cstrike
 COPY configs/plugins.ini /opt/steam/hlds/cstrike/addons/amxmodx/configs/plugins.ini
 COPY configs/users.ini /opt/steam/hlds/cstrike/addons/amxmodx/configs/users.ini
-RUN echo "amx_parachute.amxx" >> /opt/steam/hlds/cstrike/addons/amxmodx/configs/plugins.ini
+RUN echo "reapi_parachute_mute.amxx" >> /opt/steam/hlds/cstrike/addons/amxmodx/configs/plugins.ini
 
 RUN sed -i "s/TIMEOUT=10/TIMEOUT=1/" /opt/steam/hlds/hlds_run
 
 COPY kickstart.sh /kickstart.sh
+
+
+RUN mkdir -p /root/.steam/sdk32/ && \
+    cp /opt/steam/hlds/steamclient.so /root/.steam/sdk32/steamclient.so
 
 WORKDIR /opt/steam/hlds
 ENTRYPOINT /kickstart.sh
