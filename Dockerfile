@@ -156,7 +156,6 @@ COPY configs/maps.ini /opt/steam/hlds/cstrike/mapcycle.txt
 COPY lib/reapi_parachute_mute/cstrike /opt/steam/hlds/cstrike
 COPY configs/plugins.ini /opt/steam/hlds/cstrike/addons/amxmodx/configs/plugins.ini
 COPY configs/users.ini /opt/steam/hlds/cstrike/addons/amxmodx/configs/users.ini
-RUN echo "reapi_parachute_mute.amxx" >> /opt/steam/hlds/cstrike/addons/amxmodx/configs/plugins.ini
 
 RUN sed -i "s/TIMEOUT=10/TIMEOUT=1/" /opt/steam/hlds/hlds_run
 
@@ -169,6 +168,7 @@ RUN mkdir -p /root/.steam/sdk32/ && \
 RUN sed -i "s/imessage.amxx/;imessage.amxx/g" /opt/steam/hlds/cstrike/addons/amxmodx/configs/plugins.ini
 RUN sed -i "s/scrollmsg.amxx/;scrollmsg.amxx/g" /opt/steam/hlds/cstrike/addons/amxmodx/configs/plugins.ini
 COPY lib/gravity/cstrike /opt/steam/hlds/cstrike
+COPY lib/speed/cstrike /opt/steam/hlds/cstrike
 
 WORKDIR /opt/steam/hlds
 ENTRYPOINT /kickstart.sh
