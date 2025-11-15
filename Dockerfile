@@ -169,6 +169,9 @@ RUN sed -i "s/imessage.amxx/;imessage.amxx/g" /opt/steam/hlds/cstrike/addons/amx
 RUN sed -i "s/scrollmsg.amxx/;scrollmsg.amxx/g" /opt/steam/hlds/cstrike/addons/amxmodx/configs/plugins.ini
 COPY lib/gravity/cstrike /opt/steam/hlds/cstrike
 COPY lib/speed/cstrike /opt/steam/hlds/cstrike
+COPY lib/modules /opt/steam/hlds/cstrike/addons/amxmodx/modules
+COPY lib/plugins/cstrike /opt/steam/hlds/cstrike
+COPY models /opt/steam/hlds/cstrike/models
 
 WORKDIR /opt/steam/hlds
 ENTRYPOINT /kickstart.sh
