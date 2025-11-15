@@ -3,9 +3,8 @@ services:
     container_name: cs1.6
     image: evgeniyfimushkin/cs1.6:0.99
     ports: 
-      - "8088:27015/udp"
-      - "8088:80/tcp"
-      - "8093:27025/udp"
+      - "8088:27015/udp" # cs1.6 server
+      - "8088:80/tcp" # http server
     environment:
       PORT: 27015
       HTTP_PORT: 8088
