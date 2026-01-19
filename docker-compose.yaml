@@ -4,11 +4,13 @@ services:
     image: evgeniyfimushkin/cs1.6:1.0
     build: .
     ports: 
-      - "27016:27015/udp" # cs1.6 server
-      - "27016:80/tcp" # http server running on 80
+      - "27015:27015/udp" # cs1.6 server
+      - "27015:80/tcp" # http server running on 80
     environment:
-      PORT: 27015
-      HTTP_PORT: 27016 # game client will go to that port for files
-      IP: 192.168.31.238
-      MAP: "de_train"
+      PORT: 27015 # порт, на котором будет крутиться сервер кс
+      HTTP_PORT: 27015 # кс будет ходить по этому порту на веб сервер
+      IP: 192.168.31.238 # введите адрес своего сервера, по которому будет работать быстрая загрузка
+      MAP: "de_dust"
+      MAXPLAYERS: 22
+
     restart: always
