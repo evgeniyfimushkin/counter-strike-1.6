@@ -1,0 +1,15 @@
+
+
+global
+{
+	ZOOM	1.08
+	ORIGIN	772	-332	112
+	ROTATED	0
+}
+
+layer
+{
+	IMAGE "overviews/hide_n_seek2.tga"
+	HEIGHT	-161
+}
+

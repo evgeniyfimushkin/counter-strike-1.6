@@ -1,0 +1,14 @@
+// overview description file for de_02shkola.bsp Overview: Zoom 2.28, Map Origin (-554.50, -408.88, 353.00), Z Min 521.00, Z Max -47.00, Rotated 1
+
+global 
+{
+	ZOOM	2.28
+	ORIGIN	-554.50 -408.88	353.00
+	ROTATED	1
+}
+
+layer 
+{
+	IMAGE	"overviews/de_02shkola.bmp"
+	HEIGHT	-75.00
+}

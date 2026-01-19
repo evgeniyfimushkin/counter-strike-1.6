@@ -1,0 +1,14 @@
+// overview description file for aim_strike.bsp
+
+global 
+{
+	ZOOM	1.70
+	ORIGIN	-976.00	-382.50	556.00
+	ROTATED	0
+}
+
+layer 
+{
+	IMAGE	"overviews/aim_strike.bmp"
+	HEIGHT	-65.00
+}

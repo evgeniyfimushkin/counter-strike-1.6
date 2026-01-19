@@ -1,0 +1,37 @@
+//de_02shkola.res created with CtrikeMaps Release v 1.0 by AHBAR
+//"wad" "school.wad
+gfx/env/trainyardup.tga
+gfx/env/trainyarddn.tga
+gfx/env/trainyardlf.tga
+gfx/env/trainyardrt.tga
+gfx/env/trainyardft.tga
+gfx/env/trainyardbk.tga
+overviews/de_02shkola.bmp
+overviews/de_02shkola.txt
+maps/de_02shkola.bsp
+maps/de_02shkola.res
+//maps/de_02shkola.txt
+models/de_118shkola/aa_paintprefab_06_tch_smesh.mdl
+models/de_118shkola/jb_trashcan.mdl
+models/de_118shkola/apartment_mailmess_sparse.mdl
+models/de_118shkola/bm_handfat.mdl
+models/de_118shkola/brandlol.mdl
+models/de_118shkola/chair2.mdl
+models/de_118shkola/geo_vedro2.mdl
+models/de_118shkola/piano02.mdl
+models/de_118shkola/s_shelf.mdl
+models/de_118shkola/table01.mdl
+models/de_118shkola/sidelkachaka1.mdl
+sound/de_02shkola/zvonok.wav
+models/de_118shkola/ostol4stula.mdl
+sound/de_02shkola/ambient_summer.wav
+sound/de_02shkola/pa_birdloop.wav
+sound/de_02shkola/rnd_dog6.wav
+sound/de_02shkola/koridor_v_shkole.wav
+sound/de_02shkola/pesenka.wav
+models/de_118shkola/buzz_lopata.mdl
+models/fy_ppf/gaz-2705.mdl
+models/fy_ppf/merin.mdl
+models/fy_ppf/car14.mdl
+sound/de_02shkola/kabinet.wav
+sound/de_02shkola/kabinet2.wav

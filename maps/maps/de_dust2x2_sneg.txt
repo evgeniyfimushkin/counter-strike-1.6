@@ -1,0 +1,17 @@
+de_dust2x2_sneg - Bomb/Defuse
+Winter texture (Shur1k)
+
+Counter-Terrorists: Prevent Terrorists
+from bombing explosive crates.
+Team members must defuse any bombs 
+that threaten targeted areas.
+
+Terrorists: The Terrorist carrying the
+C4 must destroy one of the explosive 
+crate areas.
+
+Other Notes: There are 1 bomb target
+in the mission. 
+
+
+(Press FIRE to continue)

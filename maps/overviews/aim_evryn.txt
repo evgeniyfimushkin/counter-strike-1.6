@@ -1,0 +1,14 @@
+// overview description file for aim_snow_dino_s.bsp
+
+global 
+{
+	ZOOM	2.31
+	ORIGIN	-28 	112	-1
+	ROTATED	1
+}
+
+layer 
+{
+	IMAGE	"overviews/aim_evryn.bmp"
+	HEIGHT	-1
+}

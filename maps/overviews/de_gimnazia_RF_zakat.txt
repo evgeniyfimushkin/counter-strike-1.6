@@ -1,0 +1,14 @@
+// overview description file for de_gimnazia_RF.bsp
+
+global 
+{
+	ZOOM	0.60
+	ORIGIN	-8 	-16	-2048
+	ROTATED	0
+}
+
+layer 
+{
+	IMAGE	"overviews/de_gimnazia_RF_zakat.bmp"
+	HEIGHT	-2048
+}

@@ -1,0 +1,14 @@
+//overview description file for ze_egypt.bsp
+
+global
+{
+	ZOOM	1.16
+	ORIGIN	944	 -160      -672
+	ROTATED 0
+}
+
+layer
+{
+	IMAGE	"overviews/ze_egypt.tga"
+	HEIGHT	-1537
+} 

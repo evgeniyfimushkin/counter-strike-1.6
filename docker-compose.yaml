@@ -1,12 +1,14 @@
 services:
-  cs1.6:
-    container_name: cs1.6
-    image: evgeniyfimushkin/cs1.6:0.99
+  cs:
+    container_name: cs
+    image: evgeniyfimushkin/cs1.6:1.0
+    build: .
     ports: 
-      - "8088:27015/udp" # cs1.6 server
-      - "8088:80/tcp" # http server
+      - "27016:27015/udp" # cs1.6 server
+      - "27016:80/tcp" # http server running on 80
     environment:
       PORT: 27015
-      HTTP_PORT: 8088
+      HTTP_PORT: 27016 # game client will go to that port for files
+      IP: 192.168.31.238
       MAP: "de_train"
     restart: always

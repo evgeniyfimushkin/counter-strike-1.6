@@ -1,0 +1,14 @@
+maps/ge_frigate.bsp
+maps/ge_frigate.txt
+maps/ge_frigate.res
+sound/007frigate.wav
+sound/frigatecopter.wav
+sound/frigateengine.wav
+overviews/ge_frigate.tga
+overviews/ge_frigate.txt
+gfx/env/ge_frigatebk.tga
+gfx/env/ge_frigatedn.tga
+gfx/env/ge_frigateft.tga
+gfx/env/ge_frigatelf.tga
+gfx/env/ge_frigatert.tga
+gfx/env/ge_frigateup.tga

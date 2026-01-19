@@ -1,0 +1,14 @@
+// overview description file for fy_02shkola.bsp
+
+global 
+{
+	ZOOM	2.26
+	ORIGIN	-520.00 -343.50	363.50
+	ROTATED	1
+}
+
+layer 
+{
+	IMAGE	"overviews/fy_02shkola.bmp"
+	HEIGHT	-75.00
+}

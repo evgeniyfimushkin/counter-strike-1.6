@@ -142,9 +142,9 @@ RUN mkdir -p /opt/steam/hlds/cstrike/addons/revoice && \
     echo 'linux addons/revoice/revoice_mm_i386.so' >> /opt/steam/hlds/cstrike/addons/metamod/plugins.ini && \
     rm -rf /tmp/revoice /tmp/revoice.zip
 
-RUN curl -sLO https://jukivili.kapsi.fi/web/jk_botti/jk_botti-1.43-release.tar.xz \
-    && tar -xf jk_botti-1.43-release.tar.xz -C /opt/steam/hlds \
-    && echo 'linux addons/jk_botti/dlls/jk_botti_mm_i386.so' >> /opt/steam/hlds/cstrike/addons/metamod/plugins.ini
+# RUN curl -sLO https://jukivili.kapsi.fi/web/jk_botti/jk_botti-1.43-release.tar.xz \
+#     && tar -xf jk_botti-1.43-release.tar.xz -C /opt/steam/hlds \
+#     && echo 'linux addons/jk_botti/dlls/jk_botti_mm_i386.so' >> /opt/steam/hlds/cstrike/addons/metamod/plugins.ini
 
 COPY maps /opt/steam/hlds/cstrike
 COPY configs/server.cfg /opt/steam/hlds/cstrike/server.cfg
